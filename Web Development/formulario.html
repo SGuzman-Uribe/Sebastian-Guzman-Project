@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colours FV</title>
+    <link rel="shortcut icon" href="img/Icono_Small.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="textos-header">
+            <h1>COLOURS FV</h1>
+            <h2>FORMULARIO INGRESO DE REMESAS</h2>
+        </section>
+
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <section class="Formulario-Global">
+        <h2 class="titulo">INGRESO DE REMESAS</h2>
+        <div class="section-info-destinatario">
+            <img src="img/undraw_Filing_system_re_56h6.svg" alt="" class="imagen-formulario">
+            <div class="titulo-form-destinatario">
+               <h3>INFORMACION DEL DESTINATARIO</h3>
+            </div>
+        </div>
+
+            <form class="form-destinatario" name="destinatario">      
+                <div>
+                    <label>Primer Nombre: </label>
+                    <input type="text" name="PrimerNombre">
+                </div>
+                <div>
+                    <label>Segundo Nombre: </label>
+                    <input type="text" name="SegundoNombre">
+                </div>
+                <div>
+                    <label>Primer Apellido: </label>
+                    <input type="text" name="primerApellido" >
+                </div>
+                <div>
+                    <label>Segundo Apellido: </label>
+                    <input type="text" name="segundoApellido">
+                </div>
+                <div>
+                    <label>Identificacion: </label>
+                    <input type="text" name="identificacion">
+                </div>
+                <div>
+                    <label>Correo electronico: </label>
+                    <input type="email" name="correo" >
+                </div>
+                <div>
+                    <label>Direccion: </label>
+                    <input type="text" name="direccion" >
+                </div>
+                <div>
+                    <label>Ciudad: </label>
+                    <input type="text" name="ciudad">
+                </div>
+                <div>
+                    <label>Barrio: </label>
+                    <input type="text" name="barrio" >
+                </div>
+                <div>
+                    <label>Celular: </label>
+                    <input type="tel" name="telefono">
+                </div>
+            </form>
+            <div class="titulo-form-destinatario">
+                <H3>INFORMACION DE LA REMESA</H3> 
+            </div>
+                <form class="remesa">
+
+                    <div>
+                        <label>Largo: </label>
+                        <input type="number" name="Largo">
+                    </div>
+                    <div>
+                        <label>Ancho: </label>
+                        <input type="number" name="Ancho">
+                    </div>
+                    <div>
+                        <label>Alto: </label>
+                        <input type="number" name="Alto">
+                    </div>
+                    <div>
+                        <label>Peso real: </label>
+                        <input type="number" name="peso">
+                    </div>
+                    <div>
+                        <label>Valor mercancia: </label>
+                        <input type="text" name="valor">
+                    </div>
+                    <div>
+                        <label>Comentarios: </label>
+                        <textarea class="form-control" name="comentarios" rows="3"></textarea>
+                    </div>
+                    <div>
+                        <label>Tipo de pago: </label>
+                        <input type="text" name="TipoPago">
+                    </div>
+                    <label>Tipo de bolsa: </label>
+                    <br>
+                    <select name="tipoBolsa">
+                        <option value="Seleccionar">Seleccionar</option>
+                        <option value="Pequeña">Pequeña</option>
+                        <option value="Mediana">Mediana</option>
+                        <option value="Grande">Grande</option>
+                        <option value="Mini">Mini</option>
+                        <option value="Sobre">Sobre</option>
+                        <option value="sBolas">Sin Bolsa</option>
+                    </select>
+                </form>
+        </div>
+    </section>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Phone</h4>
+                <p>(311)-654-6010</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>info@coloursfv.com</p>
+            </div>
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>Avenida 33 #75C-56 Laureles, Medellín</p>
+            </div>
+        </div>
+        <h2 class="titulo-final">Design and development by
+            <p>&copy;Sebastián Guzmán Uribe</p>
+        </h2>
+        
+    </footer>
+</body>
+</html>
