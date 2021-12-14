@@ -83,7 +83,7 @@
 
     <main>
         <section class="seccion product-detail">
-            <div class="details container-md">
+            <div class="details container-md producto">
                 <div class="left">
                     <div class="main">
                         <img src="../public/img/PRODUCTO-AGUA-MICELAR-GANIER-GRANDE.png" alt="">
@@ -91,11 +91,10 @@
                 </div>
                 <div class="right">
                     <span>Cuidado facial</span>
-                    <h1>Agua micelar</h1>
+                    <h1 class="producto-nombre">Agua Micelar Garnier</h1>
                     <div class="price">$50</div>
-                    <form class="form">
-                        <input type="text" placeholder="1">
-                        <a href="cart.html" class="addCart">Añadir al carrito</a>
+                    <form class="form">                        
+                        <a href="" class="addCart addToCart">Añadir al carrito</a>
                     </form>
                     <h3>Detalles del producto</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero minima delectus nulla voluptates
@@ -118,7 +117,7 @@
                         <img src="../public/img/PRODUCTO-BASE-LA-COLORS1.jpg" alt="">
                     </div>
                     <div class="producto-pie">
-                        <h3>Base</h3>
+                        <h3 class="producto-nombre">Base Truly Matte LA Colors</h3>
                         <div class="rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -132,7 +131,7 @@
                     </div>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a class="addToCart" href="">
                                 <i class="fas fa-grin-hearts"></i>
                             </a>
                         </li>
@@ -186,8 +185,9 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Glidejs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/glide.min.js"></script>
-    <!-- JavaScript -->
-    <script src="../script/index.js"></script>
+    <!-- JavaScript-->
+    <script src="../script/index.js"></script> 
+    <script src="../script/añadirCarrito.js"></script>
 </body>
 
 </html>

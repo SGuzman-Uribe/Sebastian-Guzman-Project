@@ -56,6 +56,7 @@ const mostrarProductos = (productos, centro) => {
   mostrar = mostrar.join("");
   centro.innerHTML = mostrar;
 }
+
 // Filtro
 const contenedorOrdenar = document.querySelector(".ordenar-categoria");
 const centroProductos = document.querySelector(".centro-producto");
@@ -100,3 +101,4 @@ window.addEventListener("DOMContentLoaded", async () => {
   mostrarProductos(productos, tienda)
   mostrarProductos(productosVistos, vistos)
 })
+
