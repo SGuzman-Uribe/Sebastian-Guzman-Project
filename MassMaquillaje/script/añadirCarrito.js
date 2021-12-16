@@ -7,9 +7,11 @@ addToShoppingCartButtons.forEach((addToCartButton) => {
 
 // CARRITO 
 
-function addToCartClicked(event) {    
+function addToCartClicked(event) {       
     const button = event.target;
     const producto = button.closest('.producto');  
     const nombreProducto = producto.querySelector('.producto-nombre').textContent;
     localStorage.setItem(nombreProducto,nombreProducto)      
   }
+
+
