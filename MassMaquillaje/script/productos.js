@@ -61,7 +61,7 @@ const mostrarProductos = (productos, centro) => {
     const productDiv = document.createElement("div");
     let contenedor = `<div class="producto">
         <div class="producto-encabezado">
-          <img src="${producto.imagen}" alt=""/>
+          <img class="producto-imagen" src="${producto.imagen}" alt=""/>
         </div>
         <div class="producto-pie">
           <h3 class="producto-nombre">${producto.nombre}</h3>
@@ -73,12 +73,12 @@ const mostrarProductos = (productos, centro) => {
             <i class="far fa-star"></i>
           </div>
           <div class="producto-precio">
-            <h4>$${producto.precio}</h4>
+            <h4 class="precio-producto">$${producto.precio}</h4>
           </div>
         </div>
         <ul>
           <li>
-            <a href="#">
+            <a class="verDetalles" href="detalleProducto.html">
               <i class="fas fa-grin-hearts"></i>
             </a>
           </li>
@@ -98,6 +98,7 @@ const mostrarProductos = (productos, centro) => {
     centro.append(productDiv);
 
     productDiv.querySelector(".addToCart").addEventListener("click", añadirCarrito);
+    productDiv.querySelector(".verDetalles").addEventListener("click", verDetalles);
   }
 };
 
@@ -152,14 +153,19 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 
 function añadirCarrito(event) {  
-  const button = event.target;
-  console.log("1"+event)
-  
+  const button = event.target;  
   const itemProducto = button.closest(".producto");
-  console.log("2"+itemProducto)
   const nombreProducto = itemProducto.querySelector(".producto-nombre").textContent;
-  console.log("3"+nombreProducto)
   localStorage.setItem(nombreProducto, nombreProducto);}
+
+function verDetalles(event) {  
+  const button = event.target;  
+  const itemProducto = button.closest(".producto");
+  const nombreProducto = itemProducto.querySelector(".producto-nombre").textContent;
+  const imagenProducto = itemProducto.querySelector(".producto-imagen").src;
+  const precioProducto = itemProducto.querySelector(".precio-producto").textContent;
+  sessionStorage.clear();
+  sessionStorage.setItem(nombreProducto, [nombreProducto,imagenProducto,precioProducto]);}
 
 
 

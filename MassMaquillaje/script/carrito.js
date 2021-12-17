@@ -123,6 +123,7 @@ const obtenerProductos = async () => {
 const shoppingCartItemsContainer = document.querySelector(
   ".shoppingCartItemsContainer"
 );
+
 window.addEventListener("DOMContentLoaded", async () => {
   const productos = await obtenerProductos();
   for (let i = 0; i < localStorage.length; i++) {
