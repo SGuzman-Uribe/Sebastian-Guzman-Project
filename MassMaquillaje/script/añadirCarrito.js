@@ -1,5 +1,3 @@
-sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
-
 // PRODUCTOS
 const obtenerProductos = async () => {
   const res = await fetch("../script/productos.json");
@@ -8,16 +6,10 @@ const obtenerProductos = async () => {
   return productos;
 };
 
-/*const addToShoppingCartButtons = document.querySelectorAll(".addToCart");
-addToShoppingCartButtons.forEach((addToCartButton) => {
-  addToCartButton.addEventListener("click", addToCartClicked);
-});*/
-
-// CARRITO
 
 function addToCartClicked(event) {
   const button = event.target;
-  const producto = button.closest(".producto");
+  const producto = button.closest(".product");
   const nombreProducto = producto.querySelector(".producto-nombre").textContent;
   localStorage.setItem(nombreProducto, nombreProducto);
 }
@@ -59,11 +51,11 @@ const mostrarRelacionados = (productos) => {
   centro.innerHTML = "";
   for (producto of productos) {
     const productDiv = document.createElement("div");
-    let contenedor = `<div class="producto">
-        <div class="producto-encabezado">
+    let contenedor = `<div class="product">
+        <div class="product-header">
           <img class="producto-imagen" src="${producto.imagen}" alt=""/>
         </div>
-        <div class="producto-pie">
+        <div class="product-footer">
           <h3 class="producto-nombre">${producto.nombre}</h3>
           <div class="rating">
             <i class="fas fa-star"></i>
@@ -72,7 +64,7 @@ const mostrarRelacionados = (productos) => {
             <i class="fas fa-star"></i>
             <i class="far fa-star"></i>
           </div>
-          <div class="producto-precio">
+          <div class="product-price">
             <h4 class="precio-producto">$${producto.precio}</h4>
           </div>
         </div>
@@ -93,45 +85,56 @@ const mostrarRelacionados = (productos) => {
             </a>
           </li>
         </ul>
-        </div>`;
+        </div>
+        `;
     productDiv.innerHTML = contenedor;
     centro.append(productDiv);
 
-    productDiv.querySelector(".addToCart").addEventListener("click", addToCartClicked);
-    productDiv.querySelector(".verDetalles").addEventListener("click", masDetalles);
+    productDiv
+      .querySelector(".addToCart")
+      .addEventListener("click", addToCartClicked);
+    productDiv
+      .querySelector(".verDetalles")
+      .addEventListener("click", masDetalles);
   }
 };
 
-
-function getClave(){
-for (let i = 0; i < sessionStorage.length; i++){
-  if(sessionStorage.key(i) != "IsThisFirstTime_Log_From_LiveServer"){
-    let clave = sessionStorage.key(i);
-    return clave       
+function getClave() {
+  for (let i = 0; i < sessionStorage.length; i++) {
+    if (sessionStorage.key(i) != "IsThisFirstTime_Log_From_LiveServer") {
+      let clave = sessionStorage.key(i);
+      return clave;
+    }
   }
-}
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
   const productos = await obtenerProductos();
-  clave = getClave()  
+  clave = getClave();
   const productoFiltrado = productos.filter(
     (producto) => producto.nombre === clave
-  );  
-  console.log(productoFiltrado)
+  );
+  console.log(productoFiltrado);
   const productosRelacionados = productos.filter(
     (producto) => producto.categoria === productoFiltrado[0].categoria
   );
-  console.log(productosRelacionados)
+  console.log(productosRelacionados);
   mostrarDetalleProducto(productoFiltrado[0]);
   mostrarRelacionados(productosRelacionados);
 });
 
-function masDetalles(event) {  
-  const button = event.target;  
-  const itemProducto = button.closest(".producto");
-  const nombreProducto = itemProducto.querySelector(".producto-nombre").textContent;
+function masDetalles(event) {
+  const button = event.target;
+  const itemProducto = button.closest(".product");
+  const nombreProducto =
+    itemProducto.querySelector(".producto-nombre").textContent;
   const imagenProducto = itemProducto.querySelector(".producto-imagen").src;
-  const precioProducto = itemProducto.querySelector(".precio-producto").textContent;
+  const precioProducto =
+    itemProducto.querySelector(".precio-producto").textContent;
   sessionStorage.clear();
-  sessionStorage.setItem(nombreProducto, [nombreProducto,imagenProducto,precioProducto]);}
+  sessionStorage.setItem(nombreProducto, [
+    nombreProducto,
+    imagenProducto,
+    precioProducto,
+  ]);
+}

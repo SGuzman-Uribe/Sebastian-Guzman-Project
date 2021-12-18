@@ -7,63 +7,15 @@ const obtenerProductos = async () => {
 
 // MOSTRAR PRODUCTOS
 
-/*const mostrarProductos = (productos, centro) => {
-  let mostrar = productos.map(
-    ({
-      nombre,
-      imagen,
-      precio
-    }) =>
-    (`<div class="producto">
-        <div class="producto-encabezado">
-            <img src="${imagen}" alt="">
-        </div>
-        <div class="producto-pie">
-            <h3>${nombre}</h3>
-            <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <div class="producto-precio">
-                <h4>$${precio}</h4>
-            </div>
-        </div>
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="fas fa-grin-hearts"></i>
-                </a>
-            </li>
-            <li>
-                <a class="addToCart" href="#">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-sync"></i>
-                </a>
-            </li>
-        </ul>             
-    </div>`)
-  )
-
-  mostrar = mostrar.join("");
-  centro.innerHTML = mostrar;
-}
-*/
-
 const mostrarProductos = (productos, centro) => {
   for (producto of productos) {
     const productDiv = document.createElement("div");
-    let contenedor = `<div class="producto">
-        <div class="producto-encabezado">
-          <img class="producto-imagen" src="${producto.imagen}" alt=""/>
+    let contenedor = `
+        <div class="product">
+        <div class="product-header">
+          <img class="producto-imagen" src="${producto.imagen}" alt="product">
         </div>
-        <div class="producto-pie">
+        <div class="product-footer">
           <h3 class="producto-nombre">${producto.nombre}</h3>
           <div class="rating">
             <i class="fas fa-star"></i>
@@ -72,7 +24,7 @@ const mostrarProductos = (productos, centro) => {
             <i class="fas fa-star"></i>
             <i class="far fa-star"></i>
           </div>
-          <div class="producto-precio">
+          <div class="product-price">
             <h4 class="precio-producto">$${producto.precio}</h4>
           </div>
         </div>
@@ -93,7 +45,7 @@ const mostrarProductos = (productos, centro) => {
             </a>
           </li>
         </ul>
-        </div>`;
+      </div>`;
     productDiv.innerHTML = contenedor;
     centro.append(productDiv);
 
@@ -154,13 +106,13 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 function añadirCarrito(event) {  
   const button = event.target;  
-  const itemProducto = button.closest(".producto");
+  const itemProducto = button.closest(".product");
   const nombreProducto = itemProducto.querySelector(".producto-nombre").textContent;
   localStorage.setItem(nombreProducto, nombreProducto);}
 
 function verDetalles(event) {  
   const button = event.target;  
-  const itemProducto = button.closest(".producto");
+  const itemProducto = button.closest(".product");
   const nombreProducto = itemProducto.querySelector(".producto-nombre").textContent;
   const imagenProducto = itemProducto.querySelector(".producto-imagen").src;
   const precioProducto = itemProducto.querySelector(".precio-producto").textContent;
