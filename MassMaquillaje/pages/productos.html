@@ -152,6 +152,52 @@
             </div>
             <div class="vistos centro-producto contenedor"></div>
         </section>
+
+
+       <!-- START MODAL CARRITO -->
+      <div
+      class="modal fade"
+      id="carritoModal"
+      tabindex="-1"
+      aria-labelledby="carritoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="carritoModalLabel">
+              ¡Producto agregado al carrito!
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>¿Deseas ir al carrito ahora?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Continuar comprando
+            </button>
+            <button onclick="location.href='carrito.html'" type="button" class="btn btn-primary">
+              ¡Quiero ir al carrito!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END MODAL COMPRA -->
+
+    
     <footer id="nosotros" class="bg-dark text-white py-4">
         <div class="container">
             <nav class="row">
@@ -184,6 +230,11 @@
     <script src="../script/index.js"></script>
     <script src="../script/productos.js"></script>
     <script src="../script/añadirCarrito.js"></script>         
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

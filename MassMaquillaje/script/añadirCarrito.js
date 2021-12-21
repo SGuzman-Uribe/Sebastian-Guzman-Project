@@ -18,7 +18,7 @@ const mostrarDetalleProducto = (producto) => {
   const centro = document.querySelector(".product-detail");
   centro.innerHTML = "";
   const productDiv = document.createElement("div");
-  let contenedor = `<div class="details container-md producto">
+  let contenedor = `<div class="details container-md product">
     <div class="left">
         <div class="main">
             <img src="${producto.imagen}" alt="">
@@ -28,9 +28,11 @@ const mostrarDetalleProducto = (producto) => {
         <span>${producto.categoria}</span>
         <h1 class="producto-nombre">${producto.nombre}</h1>
         <div class="price">$${producto.precio}</div>
-        <form class="form">                        
-            <a href="" class="addCart addToCart">Añadir al carrito</a>
-        </form>
+        <div class="form">                        
+        <button class="addToCart addCart" href="" data-toggle="modal" data-target="#carritoModal">               
+          Añadir al carrito         
+        </button>
+        </div>
         <h3>Detalles del producto</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero minima delectus nulla voluptates
             nesciunt
@@ -70,19 +72,19 @@ const mostrarRelacionados = (productos) => {
         </div>
         <ul>
           <li>
-            <a class="verDetalles" href="detalleProducto.html">
+            <button class="verDetalles" onclick="location.href='detalleProducto.html'">
               <i class="fas fa-grin-hearts"></i>
-            </a>
+            </button>
           </li>
           <li>
-            <a class="addToCart" href="#">
-              <i class="fas fa-shopping-cart"></i>
-            </a>
+            <button class="addToCart" href="" data-toggle="modal" data-target="#carritoModal">                       
+              <i class="fas fa-shopping-cart"></i>            
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button href="#">
               <i class="fas fa-sync"></i>
-            </a>
+            </button>
           </li>
         </ul>
         </div>

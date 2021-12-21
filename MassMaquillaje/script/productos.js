@@ -30,19 +30,19 @@ const mostrarProductos = (productos, centro) => {
         </div>
         <ul>
           <li>
-            <a class="verDetalles" href="detalleProducto.html">
+            <button class="verDetalles" onclick="location.href='detalleProducto.html'">
               <i class="fas fa-grin-hearts"></i>
-            </a>
+            </button>
           </li>
           <li>
-            <a class="addToCart" href="#">
-              <i class="fas fa-shopping-cart"></i>
-            </a>
+            <button class="addToCart" href="" data-toggle="modal" data-target="#carritoModal">                       
+              <i class="fas fa-shopping-cart"></i>            
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button href="#">
               <i class="fas fa-sync"></i>
-            </a>
+            </button>
           </li>
         </ul>
       </div>`;
